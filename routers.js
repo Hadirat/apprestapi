@@ -1,5 +1,7 @@
 'use strict';
 
+const { response } = require('express');
+
 module.exports = function(app){
     var jsonku = require('./controller');
 
@@ -9,4 +11,6 @@ module.exports = function(app){
         .get(jsonku.tampilsemuamahasiswa);
     app.route('/tampil/:id')
         .get(jsonku.tampilberdasarkanid)
+    app.route('/tambah')
+        .post(jsonku.tambahmahasiswa)
 }
